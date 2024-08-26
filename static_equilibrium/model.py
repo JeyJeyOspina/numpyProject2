@@ -29,4 +29,23 @@ plt.show()
 fuerzaC = fuerzaA + fuerzaB # Numpy permite optimizar las operaciones de arreglos
 print("fuerza C =", fuerzaC)
 
+fig = plt.figure()
+
+d3 = fig.add_subplot(projection="3d")
+
+d3.set_xlim(-1, 1)
+d3.set_ylim(-1, 1)
+d3.set_zlim(-1, 1)
+
+x, y, z = np.array([0, 0, 0])
+
+u, v, w = fuerzaA
+d3.quiver(x, y, z, u, v, w, color="r", label="Fuerza A")
+u, v, w = fuerzaB
+d3.quiver(x, y, z, u, v, w, color="b", label="Fuerza B")
+u, v, w = fuerzaC
+d3.quiver(x, y , z, u, v, w, color="g", label="Fuerza C")
+
+plt.legend()
+plt.show()
 
