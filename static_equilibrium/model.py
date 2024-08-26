@@ -18,10 +18,15 @@ d3.set_zlim(-1, 1)
 x, y, z = np.array([0, 0, 0])  # se define el punto de aplicación de la fuerza en el origen
 
 u, v, w = fuerzaA  # breaking the force vector into individual components
-d3.quiver(x, y, z, u, v, w, color="r", label="forceA")
+d3.quiver(x, y, z, u, v, w, color="r", label="fuerzaA")
 
 u, v, w = fuerzaB
-d3.quiver(x, y, z, u, v, w, color="b", label="forceB")
+d3.quiver(x, y, z, u, v, w, color="b", label="fuerzaB")
 
 plt.legend()
 plt.show()
+
+fuerzaC = fuerzaA + fuerzaB # Numpy permite optimizar las operaciones de arreglos
+print("fuerza C =", fuerzaC)
+
+
